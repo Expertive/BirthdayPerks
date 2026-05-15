@@ -2,6 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Discount Automation</title>
+<script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
     h1 { color: #008060; }
@@ -11,8 +12,16 @@
     .badge { background: #e3f1ec; color: #008060; padding: 4px 10px; border-radius: 20px; font-size: 13px; }
     a { color: #008060; }
   </style>
-<script type="text/javascript" data-name="TokenSigning" data-by="Web-eID extension" src="chrome-extension://ncibgoaomkmdpilpocfeponihegamlic/token-signing-page-script.js"></script></head>
-<body>
+  <script>
+    const appBridge = window['app-bridge'];
+    const createApp = appBridge.default;
+    
+    const app = createApp({
+      apiKey: 'a6181cc4e63d7f242472143a39a8c370', // toml'daki client_id
+      host: new URLSearchParams(location.search).get('host'),
+    });
+  </script>
+  <body>
   <h1>🎂 Birthday Discount Automation</h1>
   <p>Set up BirthdayPerks so customers can enter their birthday and automatically receive a birthday discount.</p>
 
