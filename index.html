@@ -1,0 +1,163 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Discount Automation</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
+    h1 { color: #008060; }
+    .card { background: #f6f6f7; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    .step { display: flex; gap: 12px; margin: 12px 0; }
+    .step-num { background: #008060; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; }
+    .badge { background: #e3f1ec; color: #008060; padding: 4px 10px; border-radius: 20px; font-size: 13px; }
+    a { color: #008060; }
+  </style>
+<script type="text/javascript" data-name="TokenSigning" data-by="Web-eID extension" src="chrome-extension://ncibgoaomkmdpilpocfeponihegamlic/token-signing-page-script.js"></script></head>
+<body>
+  <h1>🎂 Birthday Discount Automation</h1>
+  <p>Set up BirthdayPerks so customers can enter their birthday and automatically receive a birthday discount.</p>
+
+  <div class="card">
+    <h2>✅ Prerequisites</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>App is installed on your Shopify store.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div><strong>New Customer Accounts</strong> is enabled in Settings → Customer accounts → Use new customer accounts.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>Shopify Flow is installed.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Step 1: Add the Birthday Block to Customer Profile Page</h2>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>Go to <strong>Online Store → Themes</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>Click <strong>Customize</strong> on your active theme.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div>Navigate to <strong>Checkout and customer accounts → Profile</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div>In the left panel, click <strong>Add block</strong> under the <strong>Apps</strong> section.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div>Select <strong>BirthdayPerks - Birthday Flow</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">9</div>
+      <div>Click <strong>Save</strong>.</div>
+    </div>
+    <p>Customers will now see a birthday date input and opt-in toggle on their profile page.</p>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ Step 2: Configure and Activate the Flow</h2>
+    <div class="step">
+      <div class="step-num">10</div>
+      <div>Go to <strong>Apps → Flow</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">11</div>
+      <div>Open the <strong>Birthday Discount Eligibility Check</strong> workflow.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">12</div>
+      <div>Click the <strong>Scheduled time</strong> trigger and set your preferred daily run time, for example <strong>9:00 AM</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">13</div>
+      <div>Optional: update the discount percentage in the <strong>Create discount</strong> step. The default value is <strong>20%</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">14</div>
+      <div>Click <strong>Turn on</strong> to activate the workflow.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔄 How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>Customer visits their profile page, enters their birthday date, and opts in.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>The Flow runs automatically every day at your scheduled time.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>On the customer's birthday, a unique personal discount code is generated and applied to their account.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>The discount is valid for <strong>1 day</strong> and has <strong>no minimum cart amount</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>No manual action is needed after setup.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏷️ Discount Details</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
+      <thead>
+        <tr>
+          <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d1d5db;">Setting</th>
+          <th style="text-align: left; padding: 10px; border-bottom: 2px solid #d1d5db;">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Discount type</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Percentage</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Default value</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">20% off</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Customizable</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Yes — editable in Flow</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Code</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Auto-generated, unique per customer</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">Validity</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">1 day</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px;">Minimum order</td>
+          <td style="padding: 10px;">None</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🛠️ Troubleshooting</h2>
+    <p><strong>Customer doesn't see the birthday block:</strong> Make sure the block is added to the Profile page in the theme editor and the theme is saved.</p>
+    <p><strong>Discount not issued:</strong> Confirm the Flow is turned on and a scheduled time is set.</p>
+    <p><strong>Customer opted in but no discount:</strong> Check that the birthday date is saved correctly on the customer profile in Admin → Customers → [customer] → Metafields.</p>
+  </div>
+
+  <div class="card">
+    <h2>📞 Support</h2>
+    <p>Need help? Contact us at: <a href="mailto:support@expertive.de">support@expertive.de</a></p>
+  </div>
+
+
+  </body></html>
