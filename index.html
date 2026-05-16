@@ -16,6 +16,16 @@
   <script>
     const sessionToken = await window.shopify.idToken();
   </script>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const token = await window.shopify.idToken();
+        console.log('Session token acquired:', token ? 'yes' : 'no');
+      } catch (e) {
+        console.error('App Bridge error:', e);
+      }
+    });
+  </script>
   <body>
   <h1>🎂 Birthday Discount Automation</h1>
   <p>Set up BirthdayPerks so customers can enter their birthday and automatically receive a birthday discount.</p>
