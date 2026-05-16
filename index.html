@@ -14,13 +14,7 @@
     a { color: #008060; }
   </style>
   <script>
-    const appBridge = window['app-bridge'];
-    const createApp = appBridge.default;
-    
-    const app = createApp({
-      apiKey: 'a6181cc4e63d7f242472143a39a8c370', // toml'daki client_id
-      host: new URLSearchParams(location.search).get('host'),
-    });
+    const sessionToken = await window.shopify.idToken();
   </script>
   <body>
   <h1>🎂 Birthday Discount Automation</h1>
